@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Navbar from "./components/Navbar";
-// import Home from "./components/Home";
+import Home from "./components/Home";
 // import About from "./components/About/About";
 // import Projects from "./components/Projects";
 
@@ -28,12 +28,12 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="bg-bg-cl">
       <Navbar onNavClick={handleScrollTo} />
-      {/* 
+
       <section ref={homeRef} className="snap-start h-screen">
         <Home />
-      </section> */}
+      </section>
       {/* <main className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
 
         <section ref={aboutRef} className="snap-start h-screen">
@@ -44,7 +44,7 @@ const App: React.FC = () => {
           <Projects />
         </section>
       </main> */}
-    </>
+    </div>
   );
 };
 
