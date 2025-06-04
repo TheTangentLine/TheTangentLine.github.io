@@ -15,10 +15,6 @@
 @import "tailwindcss";
 
 @theme {
-    --breakpoint-*: initial;
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 976px;
     --color-bg-cl: #EEEEEE;
     --color-nav-cl: #414141;
     --font-montserrat: Montserrat;
