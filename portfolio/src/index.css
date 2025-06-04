@@ -1,3 +1,17 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Montserrat-bold;
+    src: url(../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
 @import "tailwindcss";
 
 @theme {
@@ -7,4 +21,6 @@
     --breakpoint-lg: 976px;
     --color-bg-cl: #EEEEEE;
     --color-nav-cl: #414141;
+    --font-montserrat: Montserrat;
+    --font-montserrat-bold: Montserrat-bold;
 }

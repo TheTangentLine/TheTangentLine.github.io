@@ -30,11 +30,11 @@ const App: React.FC = () => {
   return (
     <>
       <Navbar onNavClick={handleScrollTo} />
-
+      {/* 
+      <section ref={homeRef} className="snap-start h-screen">
+        <Home />
+      </section> */}
       {/* <main className="snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth">
-        <section ref={homeRef} className="snap-start h-screen">
-          <Home />
-        </section>
 
         <section ref={aboutRef} className="snap-start h-screen">
           <About />

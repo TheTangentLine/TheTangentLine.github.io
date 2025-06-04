@@ -1,46 +1,36 @@
 import React from "react";
+import { MdHomeFilled } from "react-icons/md";
 
-type NavbarProps = {
+interface NavbarProps {
     onNavClick: (section: string) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
+    const navItems = [
+        { id: "home", label: "Home" },
+        { id: "about", label: "About" },
+        { id: "project", label: "Project" },
+    ];
+
+    return (
+        <nav className="fixed top-0 left-0 w-full bg-nav-cl text-white font-montserrat-bold flex items-center justify-between px-8 py-4 z-30">
+            <div className="flex items-center space-x-3">
+                <MdHomeFilled className="h-6 w-6" />
+                <span className="text-xl">Marvin</span>
+            </div>
+            <ul className="flex space-x-8 text-lg">
+                {navItems.map(({ id, label }) => (
+                    <li key={id}>
+                        <button
+                            onClick={() => onNavClick(id)}
+                        >
+                            {label}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
 };
 
-export default function Navbar({ onNavClick }: NavbarProps) {
-    return (
-        <nav className="fixed w-screen font-sans py-4 xl:px-8 bg-nav-cl">
-            <div className="w-full h-full flex items-center place-content-between">
-                <div className="flex space-x-4 mr-4 lg:mr-16"></div>
-                <ul className="flex space-x-8 p-4 justify-center text-white font-medium">
-
-                    <li>
-                        <button
-                            onClick={() => onNavClick("home")}
-                            className="hover:text-indigo-600 transition-colors duration-200"
-                            aria-label="Navigate to Home section"
-                        >
-                            Home
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            onClick={() => onNavClick("about")}
-                            className="hover:text-indigo-600 transition-colors duration-200"
-                            aria-label="Navigate to About section"
-                        >
-                            About
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            onClick={() => onNavClick("projects")}
-                            className="hover:text-indigo-600 transition-colors duration-200"
-                            aria-label="Navigate to Projects section"
-                        >
-                            Projects
-                        </button>
-                    </li>
-
-                </ul>
-            </div>
-        </nav >
-    );
-}
+export default Navbar;
